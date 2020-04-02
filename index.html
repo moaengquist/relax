@@ -4,6 +4,8 @@
   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
   <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+
+
 </head>
 <body>
     <ons-navigator swipeable id="myNavigator" page="mainpage.html"></ons-navigator>
@@ -14,28 +16,59 @@
             <ons-toolbar>
                 <div class="center">THE RELAX APP</div>
             </ons-toolbar>
-      
-          <ons-list>
-            <ons-list-header>SEE OUR DIFFERENT VERY ADVANCED EXERCISES:</ons-list-header>
-            <ons-list-item id="push-button">Feel Your Feet</ons-list-item>
-            <ons-list-item id="push-button" > Feel Your Shoulders</ons-list-item>
-          </ons-list>
-          <ons-button onclick="alert('Hello Johanna!')">Click Me</ons-button>
-
-              </ons-page>
-      </template>
+            <ons-list>
+                <ons-list-header>SEE OUR DIFFERENT VERY ADVANCED EXERCISES:</ons-list-header>
+                <ons-list-item id="feet-button">Feel Your Feet</ons-list-item>
+                <ons-list-item id="shoulders-button"> Feel Your Shoulders</ons-list-item>
+                <ons-list-item id="face-button"> Feel Your Face</ons-list-item>
+            </ons-list>
+          <ons-button id="about-button">About</ons-button>
+        </ons-page>
+    </template>
 
       <!-- EXERCISE 1 -->
-      <template id="page2.html">
-        <ons-page id="page2">
+      <template id="page1.html">
+        <ons-page id="page1">
           <ons-toolbar>
             <div class="left"><ons-back-button>Back to start</ons-back-button></div>
             <div class="center"></div>
           </ons-toolbar>
           <p>Instructions: Feel your feet</p>
         </ons-page>
-
       </template>
+
+      <!-- EXERCISE 2 -->
+      <template id="page2.html">
+        <ons-page id="page2">
+          <ons-toolbar>
+            <div class="left"><ons-back-button>Back to start</ons-back-button></div>
+            <div class="center"></div>
+          </ons-toolbar>
+          <p>Instructions: Feel your shoulders</p>
+        </ons-page>
+      </template>
+
+    <!-- EXERCISE 3 -->
+    <template id="page3.html">
+        <ons-page id="page3">
+            <ons-toolbar>
+            <div class="left"><ons-back-button>Back to start</ons-back-button></div>
+            <div class="center"></div>
+            </ons-toolbar>
+            <p>Instructions: Feel your face</p>
+        </ons-page>
+        </template>
+
+      <!-- EXERCISE 3 -->
+      <template id="about.html">
+        <ons-page id="about">
+            <ons-toolbar>
+            <div class="left"><ons-back-button>Back to start</ons-back-button></div>
+            <div class="center"></div>
+            </ons-toolbar>
+            <p>This is an app</p>
+        </ons-page>
+        </template>
 
       <!-- SCRIPTS -->
       <script>
@@ -43,10 +76,23 @@
             var page = event.target;
 
             if (page.id === 'mainpage') {
-                page.querySelector('#push-button').onclick = function() {
-                document.querySelector('#myNavigator').pushPage('page2.html', {data: {title: 'Page 2'}});
+                page.querySelector('#feet-button').onclick = function() {
+                document.querySelector('#myNavigator').pushPage('page1.html', {data: {title: 'Feel your feet'}}); 
                 };
-            } else if (page.id === 'page2') {
+
+                page.querySelector('#shoulders-button').onclick = function() {
+                document.querySelector('#myNavigator').pushPage('page2.html', {data: {title: 'Feel your shoulders'}}); 
+                };
+
+                page.querySelector('#face-button').onclick = function() {
+                document.querySelector('#myNavigator').pushPage('page3.html', {data: {title: 'Feel your face'}});
+                };
+
+                page.querySelector('#about-button').onclick = function() {
+                document.querySelector('#myNavigator').pushPage('about.html', {data: {title: 'ABOUT:'}});
+                };
+
+            } else if (page.id === 'page1' || page.id === 'page2' || page.id === 'page3' ) {
                 page.querySelector('ons-toolbar .center').innerHTML = page.data.title;
             }
             });
