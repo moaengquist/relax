@@ -6,6 +6,51 @@
   <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
 </head>
 <body>
-  <ons-button onclick="alert('Hello Johanna!')">Click Me</ons-button>
+    <ons-navigator swipeable id="myNavigator" page="mainpage.html"></ons-navigator>
+
+    <!-- MAIN-PAGE -->
+    <template id="mainpage.html">
+        <ons-page id="mainpage">
+            <ons-toolbar>
+                <div class="center">THE RELAX APP</div>
+            </ons-toolbar>
+      
+          <ons-list>
+            <ons-list-header>SEE OUR DIFFERENT VERY ADVANCED EXERCISES:</ons-list-header>
+            <ons-list-item id="push-button">Feel Your Feet</ons-list-item>
+            <ons-list-item id="push-button" > Feel Your Shoulders</ons-list-item>
+          </ons-list>
+          <ons-button onclick="alert('Hello Johanna!')">Click Me</ons-button>
+
+              </ons-page>
+      </template>
+
+      <!-- EXERCISE 1 -->
+      <template id="page2.html">
+        <ons-page id="page2">
+          <ons-toolbar>
+            <div class="left"><ons-back-button>Back to start</ons-back-button></div>
+            <div class="center"></div>
+          </ons-toolbar>
+          <p>Instructions: Feel your feet</p>
+        </ons-page>
+
+      </template>
+
+      <!-- SCRIPTS -->
+      <script>
+            document.addEventListener('init', function(event) {
+            var page = event.target;
+
+            if (page.id === 'mainpage') {
+                page.querySelector('#push-button').onclick = function() {
+                document.querySelector('#myNavigator').pushPage('page2.html', {data: {title: 'Page 2'}});
+                };
+            } else if (page.id === 'page2') {
+                page.querySelector('ons-toolbar .center').innerHTML = page.data.title;
+            }
+            });
+      </script>
+  
 </body>
 </html>
