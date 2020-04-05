@@ -1,0 +1,16 @@
+#headerText {
+color:purple;
+font-family: fantasy;
+font-size: 52px;
+margin-top: 0.1em;
+}
+
+#toolbar {
+  background-color: #ffe3f0;
+  padding: 10px;
+  height: inherit;
+}
+
+#tab1Content {
+  margin-top: 40px;
+}
