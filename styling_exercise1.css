@@ -1,0 +1,78 @@
+  /* ABOUT PAGE */
+  .toolbar{
+}
+.button{
+    background-image: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%);    margin:0.2em;
+    font-size: xx-large;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.fa.fa-grin-hearts{
+    font-size: xx-large;
+    vertical-align: middle;
+}
+
+.toolbar__center {
+  background-image: linear-gradient(to top, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);    font-family: sans-serif;
+  font-size: xx-large;
+  text-shadow: 0px 0px 10px rgba(0,0,0,0.34);
+  color: white;
+}
+.toolbar__left {
+    background-image: linear-gradient(to top, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);    font-family: sans-serif;
+
+}
+.toolbar__right{
+    background-image: linear-gradient(to top, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);    font-family: sans-serif;
+
+}
+
+.page__background{
+  background-image: linear-gradient(to top, #ebc0fd 0%, #d9ded8 100%);
+}
+
+.page__content{
+  font-family: sans-serif;
+  font-size: medium;
+  padding: 10px;
+}
+
+.tabbar{
+  background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
+}
+.tabbar__item.active{
+  background-color: rgba(0, 0, 0, 0.303);
+}
+
+.ons-icon{
+  text-shadow: 0px 0px 10px rgba(0,0,0,0.34);
+  color: white;  
+}
+
+.tabbar__label{
+  text-shadow: 0px 0px 10px rgba(0,0,0,0.34);
+  color: white;  
+}
+
+.my-header-image{
+  max-width: 100%;
+  filter: brightness(150%);
+}
+
+/* EXERSICE PAGES */
+.page__content{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.page__content h1{
+  text-align: center;
+  color: white;
+  text-shadow: 0px 0px 20px rgba(255, 15, 183, 0.803);
+
+}
+.page__content li{
+  color: purple;
+  font-size: small;
+}
+
