@@ -37,11 +37,19 @@
     font-size: medium;
     padding: 10px;
   }
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    .tabbar{
 
+      border-top: 1px solid #ccc;
+      background-size: 100%;
+    
+  }
+}
   .tabbar {
     background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
 
   }
+
 
   .tabbar__item.active{
     background-color: rgba(0, 0, 0, 0.303);
