@@ -11,7 +11,7 @@
     font-size: x-large;
     text-shadow: 0px 0px 10px rgba(0,0,0,0.34);
     color: white;
-
+    position: relative;
   }
 
   .toolbar__left {
@@ -19,6 +19,7 @@
 
 }
 .toolbar__right{
+
     background-image: linear-gradient(to top, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);    font-family: sans-serif;
 
 }
@@ -37,9 +38,11 @@
     padding: 10px;
   }
 
-  .tabbar{
+  .tabbar {
     background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
+
   }
+
   .tabbar__item.active{
     background-color: rgba(0, 0, 0, 0.303);
   }
