@@ -15,6 +15,10 @@
       <ons-page id="mainpage">
       <ons-toolbar>
         <div class="center">The Relax App</div>
+        <div class="right">
+          <ons-toolbar-button id="toolbarButton">Click me!</ons-toolbar-button>
+        </div>
+
       </ons-toolbar>
 
       <ons-tabbar swipeable position="auto">
@@ -36,6 +40,22 @@
           In this app you can relax.
           Click on the different tabs to see the very advanced exercises!
         </p>
+
+        <ons-speed-dial position="bottom right" direction="up">
+          Share your process:   
+          <ons-fab>
+            <ons-icon icon="md-share"></ons-icon>
+          </ons-fab>
+          <ons-speed-dial-item>
+            <ons-icon icon="md-twitter"></ons-icon>
+          </ons-speed-dial-item>
+          <ons-speed-dial-item>
+            <ons-icon icon="md-facebook"></ons-icon>
+          </ons-speed-dial-item>
+          <ons-speed-dial-item>
+            <ons-icon icon="md-google-plus"></ons-icon>
+          </ons-speed-dial-item>
+        </ons-speed-dial>
       </ons-page>
   </template>
 
@@ -57,6 +77,12 @@
         <li>Feel the connection between the top of the head and the feet.</li>
       </ul>
     </p>
+    <br/>
+    <div class="switchText">
+      Done with exercise: <ons-switch></ons-switch>
+    </div>
+
+
   </ons-page>
 </template>
 
@@ -75,6 +101,9 @@
         <li>Experience the breath flowing in and out of the body.</li>
       </ul>
     </p>
+    <div class="switchText">
+      Done with exercise: <ons-switch></ons-switch>
+    </div>
   </ons-page>
 </template>
 
@@ -99,15 +128,30 @@
         <li>The space surrounding the head.</li>
       </ul>
     </p>
+    <div class="switchText">
+      Done with exercise: <ons-switch></ons-switch>
+    </div>
   </ons-page>
 </template>
 
       <!-- SCRIPTS -->
       <script>
+        document.addEventListener('init', function(event) {
+        var page = event.target;
+
       document.addEventListener('prechange', function(event) {
         document.querySelector('ons-toolbar .center')
           .innerHTML = event.tabItem.getAttribute('label');
       });
+
+      if (page.id === 'mainpage') {
+        page.querySelector('#toolbarButton').onclick = function() {
+          ons.notification.alert('Just do the exercise!!');
+    };
+      }
+        });
+
+
       </script>
 
 </body>
